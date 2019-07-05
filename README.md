@@ -24,6 +24,17 @@ tsc
 Use `tsc <filename>` for transpiling a TypeScript file and creating JavaScript file
 Compiler options can be passed but its best to use `tsconfig.json` file
 
+```json
+{
+  "compilerOptions":
+  {
+    "target": "es3",
+    "watch": true,
+    "lib": ["dom", "es2017"]
+  }
+}
+```
+
 ### Strong Typing
 String type all the variables using build in types or custom types
 Use `type` keyword for custom types
