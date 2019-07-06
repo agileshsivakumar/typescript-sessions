@@ -10,6 +10,11 @@ function tableCreate(employees) {
   var tableHeadRow = document.createElement('tr');
   tableHead.appendChild(tableHeadRow);
 
+  var tableHeadRowContentCount = document.createElement('th');
+  tableHeadRowContentCount.setAttribute('scope', 'col');
+  tableHeadRowContentCount.innerHTML = '#';
+  tableHeadRow.appendChild(tableHeadRowContentCount);
+
   var employeeKeys = [];
   if (employees && employees.length > 0) {
     employeeKeys = Object.keys(employees[0]);
@@ -25,6 +30,12 @@ function tableCreate(employees) {
   for (var indexRow = 0; indexRow < employees.length; indexRow++) {
     var tableBodyRow = document.createElement('tr');
     tableBody.appendChild(tableBodyRow);
+
+    var tableBodyRowContentCount = document.createElement('th');
+    tableBodyRowContentCount.setAttribute('scope', 'col');
+    tableBodyRowContentCount.innerHTML = (indexRow+1).toString();
+    tableBodyRow.appendChild(tableBodyRowContentCount);
+
     for (
       var indexColumn = 0;
       indexColumn < employeeKeys.length;
@@ -44,7 +55,8 @@ var employees = [
     lastName: 'Appleseed',
     designation: 'Senior Software Engineer',
     experience: '18 months',
-    Age: 27,
+    age: 27,
+    phonenumber: '9798636932',
     currentLocation: 'Chicago',
     telecommuter: true
   },
@@ -56,6 +68,14 @@ var employees = [
     CurrentLocation: 'Omaha',
     phoneNumber: '9798636932',
     telecommuter: false
+  },
+  {
+    firstName: 'John',
+    lastName: 'Papa',
+    designation: 'Angular Developer',
+    experience: '48 months',
+    currentLocation: 'Silicon Valley',
+    telecommuter: true
   }
 ];
 
